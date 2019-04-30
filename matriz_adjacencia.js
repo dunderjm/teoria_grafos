@@ -14,7 +14,13 @@ class MatrizAdjacencia{
             i.push(0);
     }
 
-    
+    remover_vertice(v){
+        let vertice = this.matriz[v];
+        for(let i of this.matriz){
+            i.splice(v, 1);
+        }
+        this.matriz.splice(vertice, 1);
+    }
     adicionar_aresta(i, j){
         this.matriz[i][j] = 1;
         if(!this.digrafo)
@@ -38,10 +44,11 @@ class MatrizAdjacencia{
 
 function main(){
     matriz = new MatrizAdjacencia();
-    matriz.adicionar_vertice();
-    matriz.adicionar_vertice();
-    matriz.adicionar_aresta(0, 1);
-    matriz.remover_aresta(0, 1);
+    matriz.adicionar_vertice(); //0
+    matriz.adicionar_vertice(); //1
+    matriz.adicionar_vertice(); //2
+    matriz.adicionar_aresta(0, 1); 
+    matriz.remover_vertice(0);
     matriz.imprimir_matriz();
 }
 main()
