@@ -23,10 +23,10 @@ class Prim {
         let verticeAtual = 0; // vertice inicial, vertice com menor distancia
         aux[verticeAtual].antecessor = 0;  // vertice inicial não possui antecessor
         aux[verticeAtual].distanciaAntecessor = 0; // distancia do vertice inicial 0
+        aux[verticeAtual].fechado = true; // fecha o vértice
         this.grafo.adicionar_vertice(aux[verticeAtual].vertice); // adiciona o vértices ao novo grafo
-        while (nArestasUsadas !== ( this.qtdVertices - 1 )) { // condição de parada, árvore terminada se true
-            aux[verticeAtual].fechado = true; // fecha o vértice
-            verticesFechados.push(aux[verticeAtual].vertice); // adiciona o vértice a lista de vértices fechados
+        verticesFechados.push(aux[verticeAtual].vertice); // adiciona o vértice a lista de vértices fechados    
+        while (this.qtdVertices !== verticesFechados.length) { // condição de parada, árvore terminada se true
             console.log();
             console.log("VERTICE ATUAl");
             console.log(aux[verticeAtual]);
@@ -68,12 +68,17 @@ class Prim {
 
             verticeAtual = verticeAux.vertice; // atualiza o vértice atual
             if (verticeAux.vertice !== null) { // se o vértice atual for válido
+                aux[verticeAtual].fechado = true; // fecha o vértice
+                verticesFechados.push(aux[verticeAtual].vertice); // adiciona o vértice a lista de vértices fechado
                 this.grafo.adicionar_vertice(aux[verticeAtual].vertice); // adiciona o vértices ao novo grafo
                 // põe a aresta na árvore
                 this.grafo.adicionar_aresta(aux[verticeAtual].antecessor, aux[verticeAtual].vertice, aux[verticeAtual].distanciaAntecessor);
                 nArestasUsadas++; // incrementa o número de arestas usadas
             }
         }
+        console.log();
+        console.log("VERTICE ATUAl");
+        console.log(aux[verticeAtual]);
     }
 
     mostraArvore() {
@@ -82,8 +87,7 @@ class Prim {
 
     getArvore() {
         return this.grafo;
-    }
-    
+    }  
 }
 
 module.exports = Prim;
