@@ -1,6 +1,6 @@
 //Representação usando Lista de Adjacência
 class ListaAdjacencia{
-    constructor(dirigido, ponderado){
+    constructor(dirigido = false, ponderado = false){
         this.listaAdj = new Map();
         this.dirigido = dirigido;
         this.ponderado = ponderado;
@@ -37,7 +37,7 @@ class ListaAdjacencia{
         }
     }
 
-    adicionar_aresta(vi, vf, peso){
+    adicionar_aresta(vi, vf, peso = 0){
         if(this.ponderado){
             this.listaAdj.get(vi).set(vf, peso);
             if (!this.dirigido) {
