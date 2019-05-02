@@ -22,7 +22,7 @@ class MatrizIncidencia{
                if(this.matriz.indexOf(n) == i){
                    n.push(1);
                }else if(this.matriz.indexOf(n) == j){
-                   n.push(1);
+                   n.push(-1);
                }else{
                    n.push(0);
                }
