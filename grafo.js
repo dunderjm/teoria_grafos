@@ -1,3 +1,4 @@
+//Representação usando Lista de Adjacência
 class Grafo{
     constructor(dirigido, ponderado){
         this.listaAdj = new Map();
@@ -84,8 +85,9 @@ class Grafo{
        }
     }
 }
+module.exports = Grafo;
 
-function main(){
+/*function main(){
     grafo = new Grafo(false, true); //dirigido, ponderado
     vertices=[0, 1, 2, 3];
     for(let i of vertices){
@@ -104,4 +106,4 @@ function main(){
     //grafo.imprimir_grafo();
 }
 
-main();
+main(); */
