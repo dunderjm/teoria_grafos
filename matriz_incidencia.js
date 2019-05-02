@@ -18,10 +18,20 @@ class MatrizIncidencia{
 
     adicionar_aresta(i, j){
        for(let n of this.matriz){
-            if (this.matriz.indexOf(n) ==  i | this.matriz.indexOf(n) == j){
-                n.push(1);
-            }else{
-                n.push(0)
+            if(this.dirigido){
+               if(this.matriz.indexOf(n) == i){
+                   n.push(1);
+               }else if(this.matriz.indexOf(n) == j){
+                   n.push(1);
+               }else{
+                   n.push(0);
+               }
+            } else{
+                if (this.matriz.indexOf(n) == i | this.matriz.indexOf(n) == j) {
+                    n.push(1);
+                } else {
+                    n.push(0);
+                }
             }
         } 
     }
