@@ -1,4 +1,4 @@
-class Matriz_incidencia{
+class MatrizIncidencia{
     constructor(dirigido = false){
         this.dirigido = dirigido;
         this.matriz = new Array();
@@ -39,16 +39,4 @@ class Matriz_incidencia{
         console.log(this.matriz);
     }
 }
-
-function main(){
-    matriz = new Matriz_incidencia();
-    matriz.adicionar_vertice();
-    matriz.adicionar_vertice();
-    matriz.adicionar_vertice();
-    matriz.adicionar_aresta(1, 2);
-    matriz.remover_aresta(0);
-    matriz.remover_vertice(1);
-    matriz.imprimir_grafo();
-
-}
-main()
+module.exports = MatrizIncidencia;

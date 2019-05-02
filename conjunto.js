@@ -6,7 +6,7 @@ class Aresta{
     }
 }
 
-class Grafo_conjuntos{
+class Conjunto{
     constructor(dirigido = false){
         this.vertices = new Set();
         this.arestas = new Array();
@@ -45,18 +45,4 @@ class Grafo_conjuntos{
     }
 }
 
-function main(){
-    grafo = new Grafo_conjuntos();
-    vertices = [0, 1, 2, 3];
-    for(let i of vertices){
-        grafo.adicionar_vertice(i);
-    }
-    grafo.adicionar_aresta(0, 1);
-    grafo.adicionar_aresta(0, 2);
-    grafo.adicionar_aresta(0, 3);
-    grafo.adicionar_aresta(2, 3);
-    grafo.imprimir_grafo();
-    grafo.remover_vertice(0);
-    grafo.imprimir_grafo();
-}
-main()
+module.exports = Conjunto;

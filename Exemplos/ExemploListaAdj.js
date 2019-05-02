@@ -1,6 +1,7 @@
-const Grafo = require("./grafo.js");
+const ListaAdjacencia = require("../listaadjacencia.js");
+
 function main() {
-    grafo = new Grafo(false, true); //dirigido, ponderado
+    grafo = new ListaAdjacencia(false, true); //dirigido, ponderado
     vertices = [0, 1, 2, 3];
     for (let i of vertices) {
         grafo.adicionar_vertice(i);
