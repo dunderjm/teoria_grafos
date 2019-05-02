@@ -46,7 +46,13 @@ class MatrizIncidencia{
 
     }
     imprimir_grafo(){
-        console.log(this.matriz);
+        for(let i of this.matriz){
+            let conc = "" + this.matriz.indexOf(i)+ " | ";
+            for(let j of i){
+                conc += j + "\t|";
+            }
+          console.log(conc);
+       }
     }
 }
 module.exports = MatrizIncidencia;
