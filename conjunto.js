@@ -40,8 +40,16 @@ class Conjunto{
     }
 
     imprimir_grafo(){
-        console.log(this.vertices);
-        console.log(this.arestas);
+        let conc = "Vertices: ";
+        for(let i of this.vertices){
+           conc+= i + " ";
+        }
+        console.log(conc);
+        conc = "Arestas: ";
+        for( let i of this.arestas){
+            conc += "(" + i.i + ", " + i.j +") ";
+        }
+        console.log(conc);
     }
 }
 
