@@ -1,4 +1,4 @@
-const ListaAdjacencia = require("../lista_adjacencia.js/index.js");
+const ListaAdjacencia = require("../lista_adjacencia.js");
 
 function main() {
     grafo = new ListaAdjacencia(false, false); //dirigido, ponderado

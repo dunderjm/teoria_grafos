@@ -37,8 +37,14 @@ class MatrizAdjacencia{
         return this.matriz[v];
     }
 
-    imprimir_matriz(){
-        console.log(this.matriz);
+    imprimir_matriz() {
+        for (let i of this.matriz) {
+            let conc = "" + this.matriz.indexOf(i) + " | ";
+            for (let j of i) {
+                conc += j + "\t|";
+            }
+            console.log(conc);
+        }
     }
 }
 module.exports = MatrizAdjacencia;

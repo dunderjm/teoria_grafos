@@ -1,4 +1,5 @@
-const ListaAdjacencia = require("../listaadjacencia.js");
+const ListaAdjacencia = require("../lista_adjacencia.js");
+
 const Kruskal = require("../kruskal");
 
 function main() {

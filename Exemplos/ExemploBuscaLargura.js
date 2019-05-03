@@ -1,8 +1,8 @@
-const ListaAdjacencia = require("./lista_adjacencia");
+const ListaAdjacencia = require("../lista_adjacencia");
 const busca_largura = require("../busca_largura.js");
 
 function main() {
-    exemplo = new ListaAdjacencia(true, true);
+    exemplo = new ListaAdjacencia(true, true); //dirigido, ponderado
     vertices = [0, 1, 2, 3, 4];
     for (let i of vertices) {
         exemplo.adicionar_vertice(i);
@@ -15,7 +15,7 @@ function main() {
     exemplo.adicionar_aresta(3, 0, );
     exemplo.adicionar_aresta(3, 4, );
     exemplo.adicionar_aresta(4, 1, );
-
+    exemplo.imprimir_grafo();
     let visitados = busca_largura(exemplo, 0);
     console.log(visitados);
 }

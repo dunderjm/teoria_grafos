@@ -1,4 +1,4 @@
-const ListaAdjacencia = require("./listaadjacencia.js");
+const ListaAdjacencia = require("./lista_adjacencia.js");
 
 class Kruskal {
     constructor(grafo) {

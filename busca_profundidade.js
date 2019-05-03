@@ -1,24 +1,40 @@
-function busca_profundidade(grafo, inicial) {
-    let visitados = new Map();
-    let pilha = new Array();
-    let distancia_atual = 1;
-    fila.push(inicial); //adiciona o vertice inicial na fila
-    visitados.set(inicial, distancia_atual);
-    distancia_atual++;
-    while (fila.length > 0) { // enquanto a fila não for vazia
-        let u = pilha.pop();
-        let adj_u;
-        if (grafo.ponderado) {
-            adj_u = Array.from(grafo.consultar_vertice(u).keys());
-        } else {
-            adj_u = grafo.consultar_vertice(u); // pega todos os vertices adjacente ao vertice u 
-        }
-        for (let i of adj_u) {
-            if (visitados.has(i)) continue;
-            visitados.set(i, distancia_atual);
-            pilha.push(i);
-        }
-        distancia_atual++;
+class DFS{
+    constructor(grafo){
+        this.count = 0;
+        this.visitados = new Map();
+        this.grafo = grafo;
     }
-    return visitados;
+    
+    dfs(){
+        this.count = 0;
+        for (let i of this.grafo.listaAdj.keys()) {
+            this.visitados.set(i, -1);
+        }
+
+        for (let i of this.grafo.listaAdj.keys()){
+            if (this.visitados.get(i) == -1) {
+                this.dfsR(i);
+            }
+        }
+    }
+
+    dfsR(v) {
+        this.visitados.set(v, this.count);
+        this.count++;
+       
+        let adj_u;
+        if (this.grafo.ponderado){
+            adj_u = Array.from(this.grafo.consultar_vertice(v).keys());
+        } else {
+            adj_u = this.grafo.consultar_vertice(v); // pega todos os vertices adjacente ao vertice v
+        }
+
+        for( let i of adj_u){
+            if(this.visitados.get(i) == -1){
+                this.dfsR(i);
+            }
+        }
+    }
 }
+
+module.exports = DFS;
