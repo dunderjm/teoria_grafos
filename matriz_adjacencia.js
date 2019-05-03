@@ -38,10 +38,15 @@ class MatrizAdjacencia{
     }
 
     imprimir_matriz() {
+        let colunas = "     ";
+        for(let i of this.matriz){
+            colunas += "v" + this.matriz.indexOf(i)+ "  ";
+        }
+        console.log(colunas);
         for (let i of this.matriz) {
-            let conc = "" + this.matriz.indexOf(i) + " | ";
+            let conc = "v" + this.matriz.indexOf(i) + "  ";
             for (let j of i) {
-                conc += j + "\t|";
+                conc += "|" + j + "| ";
             }
             console.log(conc);
         }

@@ -6,7 +6,7 @@ function main() {
     matriz.adicionar_vertice(); //1
     matriz.adicionar_vertice(); //2
     matriz.adicionar_aresta(0, 1);
-    matriz.remover_vertice(0);
+    //matriz.remover_vertice(0);
     matriz.imprimir_matriz();
 }
 main()
