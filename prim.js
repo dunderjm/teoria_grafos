@@ -21,7 +21,7 @@ class Prim {
             });
         }
         let verticeAtual = 0; // vertice inicial, vertice com menor distancia
-        aux[verticeAtual].antecessor = 0;  // vertice inicial não possui antecessor
+        aux[verticeAtual].antecessor = null;  // vertice inicial não possui antecessor
         aux[verticeAtual].distanciaAntecessor = 0; // distancia do vertice inicial 0
         aux[verticeAtual].fechado = true; // fecha o vértice
         this.grafo.adicionar_vertice(aux[verticeAtual].vertice); // adiciona o vértices ao novo grafo
